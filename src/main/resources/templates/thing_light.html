@@ -1,29 +1,11 @@
 #parse("base.html")
 #@mainLayout()
-<h1>Home Template</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Type</th>
-            <th>Name</th>
-            <th>State</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    #foreach ($t in $things)
-    <tr>
-        <td>
-            $velocityCount
-        </td>
-        <td>$t.getTypeName()</td>
-        <td>$t.getName()</td>
-        <td>$t.getState().name()</td>
-        <td>$t.getDescription()</td>
-    </tr>
+<h1>Light $id $light.getName()</h1>
+<a href="/things/$id?action=toggle">
+    #if ($light.isLightOn())
+        Toggle Off
+    #else
+        Toggle On
     #end
-    </tbody>
-</table>
+</a>
 #end
